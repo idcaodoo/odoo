@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="tm_pos_order_service_inherit_form_view" model="ir.ui.view">
+            <field name="name">tm_pos_order_service_inherit_form_view</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='table_id']" position="after">
+                    <field name="table_service_note" />
+                </xpath>
+                <xpath expr="//field[@name='lines']/tree/field[@name='refunded_qty']" position="after">
+                    <field name="table_service_note" string="Service Order" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='lines']/form/group/field[@name='notice']" position="after">
+                    <field name="table_service_note" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+        
+        <!--ADD TABLE NOTE TO TREE VIEW-->
+        <record id="tm_pos_order_service_inherit_tree_view" model="ir.ui.view">
+            <field name="name">tm_pos_order_service_inherit_tree_view</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field string="Nota pedido" name="table_service_note" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="tm_pos.MostradorConfirm">
+        <div class="mostrador-overlay fixed-top w-100 h-100 bg-view">
+            <div class="screen-mostrador position-absolute top-0 start-0 bottom-0 end-0 py-4 m-auto w-100 rounded bg-view text-center fw-bolder"
+                 style="display: flex;
+                    background-size: cover;
+                    background-attachment: fixed;
+                    background-color: var(--homeMenu-bg-color, #e7e9ed);
+                    background-image: var(--homeMenu-bg-image, url(/web_enterprise/static/img/background-light.svg));">
+                <div class="mostrador-body align-items-center justify-content-around" style="width: 100%; display: grid;">
+                    <div style="display: flex; padding: 10px;">
+                        <div class="oe_inline" style="padding: 20px;">
+                            <button class="login-button select-cashier btn btn-lg btn-secondary"
+                                    style="border-color: #fff; border-width: 2px;"
+                                    t-on-click="selectUBER">
+                                <img src="/tm_pos/static/description/assets/icons/uber.png"
+                                     style="max-width: 100px;"
+                                     title="UBER" />
+                            </button>
+                        </div>
+                        <div class="oe_inline" style="padding: 20px;" />
+                        <div class="oe_inline" style="padding: 20px;">
+                            <button class="login-button select-cashier btn btn-lg btn-secondary"
+                                    style="border-color: #fff; border-width: 2px;"
+                                    t-on-click="selectDIDI">
+                                <img src="/tm_pos/static/description/assets/icons/didi.png"
+                                     style="max-width: 100px;"
+                                     title="DIDI" />
+                            </button>
+                        </div>
+                        <div class="oe_inline" style="padding: 20px;" />
+                        <div class="oe_inline" style="padding: 20px;">
+                            <button class="login-button select-cashier btn btn-lg btn-secondary"
+                                    style="border-color: #fff; border-width: 2px;"
+                                    t-on-click="selectRAPPI">
+                                <img src="/tm_pos/static/description/assets/icons/rappi.png"
+                                     style="max-width: 100px; min-height: 100px;"
+                                     title="RAPPI" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

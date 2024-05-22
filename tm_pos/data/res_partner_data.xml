@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="res_partner_cliente_mostrador" model="res.partner">
+            <field name="company_type">person</field>
+            <field name="customer_rank" eval="1" />
+            <field name="name">Cliente Mostrador</field>
+        </record>
+    </data>
+
+    <data noupdate="1">
+        <record id="res_partner_cliente_aplicaciones" model="res.partner">
+            <field name="company_type">person</field>
+            <field name="customer_rank" eval="1" />
+            <field name="name">Cliente Aplicaciones</field>
+        </record>
+    </data>
+
+    <data noupdate="1">
+        <record id="res_partner_cliente_uber" model="res.partner">
+            <field name="company_type">person</field>
+            <field name="customer_rank" eval="1" />
+            <field name="name">Cliente Uber</field>
+        </record>
+
+        <record id="res_partner_cliente_didi" model="res.partner">
+            <field name="company_type">person</field>
+            <field name="customer_rank" eval="1" />
+            <field name="name">Cliente DiDi</field>
+        </record>
+
+        <record id="res_partner_cliente_rappi" model="res.partner">
+            <field name="company_type">person</field>
+            <field name="customer_rank" eval="1" />
+            <field name="name">Cliente Rappi</field>
+        </record>
+    </data>
+</odoo>

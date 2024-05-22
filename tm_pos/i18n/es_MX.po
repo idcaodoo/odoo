@@ -1,0 +1,182 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* tm_pos
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-06 18:49+0000\n"
+"PO-Revision-Date: 2024-05-06 13:56-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: tm_pos
+#. odoo-javascript
+#: code:addons/tm_pos/static/src/xml/floor_screen.xml:0
+#, python-format
+msgid "Add"
+msgstr "Añadir"
+
+#. module: tm_pos
+#. odoo-javascript
+#: code:addons/tm_pos/static/src/js/floor_screen.js:0
+#, python-format
+msgid "Add note:"
+msgstr "Agregar nota"
+
+#. module: tm_pos
+#. odoo-javascript
+#: code:addons/tm_pos/static/src/xml/floor_screen.xml:0
+#, python-format
+msgid "Aplicaciones"
+msgstr "Aplicaciones"
+
+#. module: tm_pos
+#. odoo-javascript
+#: code:addons/tm_pos/static/src/js/floor_screen.js:0
+#, python-format
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: tm_pos
+#. odoo-javascript
+#: code:addons/tm_pos/static/src/js/floor_screen.js:0
+#, python-format
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: tm_pos
+#: model:ir.model,name:tm_pos.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: tm_pos
+#. odoo-javascript
+#: code:addons/tm_pos/static/src/xml/pos_mostrador.xml:0
+#, python-format
+msgid "DIDI"
+msgstr "DIDI"
+
+#. module: tm_pos
+#. odoo-javascript
+#: code:addons/tm_pos/static/src/xml/floor_screen.xml:0
+#, python-format
+msgid "Domicilio"
+msgstr "Domicilio"
+
+#. module: tm_pos
+#. odoo-javascript
+#: code:addons/tm_pos/static/src/js/floor_screen.js:0
+#, python-format
+msgid "Enter your note"
+msgstr "Ingresa tu nota"
+
+#. module: tm_pos
+#. odoo-javascript
+#: code:addons/tm_pos/static/src/xml/floor_screen.xml:0
+#, python-format
+msgid "Mostrador"
+msgstr "Mostrador"
+
+#. module: tm_pos
+#: model:ir.model,name:tm_pos.model_pos_order_line
+msgid "Point of Sale Order Lines"
+msgstr "Líneas de pedido en TPV"
+
+#. module: tm_pos
+#: model:ir.model,name:tm_pos.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Pedidos del POS"
+
+#. module: tm_pos
+#: model:ir.model,name:tm_pos.model_pos_preparation_display_display
+msgid "Preparation display"
+msgstr "Pantalla de preparación"
+
+#. module: tm_pos
+#: model:ir.model,name:tm_pos.model_pos_preparation_display_order
+msgid "Preparation orders"
+msgstr "Ordenes de preparación"
+
+#. module: tm_pos
+#. odoo-javascript
+#: code:addons/tm_pos/static/src/xml/pos_mostrador.xml:0
+#, python-format
+msgid "RAPPI"
+msgstr "RAPPI"
+
+#. module: tm_pos
+#: model:ir.model,name:tm_pos.model_restaurant_floor
+msgid "Restaurant Floor"
+msgstr "Piso de restaurante"
+
+#. module: tm_pos
+#: model:ir.model,name:tm_pos.model_restaurant_table
+msgid "Restaurant Table"
+msgstr "Mesa de restaurante"
+
+#. module: tm_pos
+#: model_terms:ir.ui.view,arch_db:tm_pos.tm_pos_order_service_inherit_form_view
+msgid "Service Order"
+msgstr "Orden de servicio"
+
+#. module: tm_pos
+#. odoo-python
+#: code:addons/tm_pos/models/res_partner.py:0
+#, python-format
+msgid ""
+"Sorry! You can't delete this customer. Please contact to Developer for more "
+"information."
+msgstr "No puedes borrar este cliente"
+
+#. module: tm_pos
+#. odoo-python
+#: code:addons/tm_pos/models/res_partner.py:0
+#, python-format
+msgid ""
+"Sorry, You can't change the name of this customer. Please contact to "
+"Developer for more information."
+msgstr "No puedes borrar este cliente"
+
+#. module: tm_pos
+#. odoo-python
+#: code:addons/tm_pos/models/restaurant_table.py:0
+#, python-format
+msgid "Sorry, You can't delete Para llevar floor."
+msgstr "No puedes borrar el piso Para llevar"
+
+#. module: tm_pos
+#: model:ir.model.fields,field_description:tm_pos.field_pos_order__table_service_note
+#: model:ir.model.fields,field_description:tm_pos.field_pos_order_line__table_service_note
+#: model:ir.model.fields,field_description:tm_pos.field_pos_preparation_display_display__table_service_note
+#: model:ir.model.fields,field_description:tm_pos.field_pos_preparation_display_order__table_service_note
+msgid "Table Note"
+msgstr "Nota pedido"
+
+#. module: tm_pos
+#. odoo-javascript
+#: code:addons/tm_pos/static/src/js/floor_screen.js:0
+#, python-format
+msgid "The number of usable tables has been exhausted."
+msgstr "Las mesas utilizadas han sido agotadas"
+
+#. module: tm_pos
+#. odoo-javascript
+#: code:addons/tm_pos/static/src/xml/pos_mostrador.xml:0
+#, python-format
+msgid "UBER"
+msgstr "UBER"
+
+#. module: tm_pos
+#. odoo-javascript
+#: code:addons/tm_pos/static/src/js/floor_screen.js:0
+#, python-format
+msgid "Warning!"
+msgstr "Advertencia"

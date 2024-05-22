@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="restaurant_para_llever_floor" model="restaurant.floor">
+            <field name="name">Para llevar</field>
+            <field name="background_color">rgb(210, 210, 210)</field>
+        </record>
+
+        <record id="restaurant_para_llever_pl1_table" model="restaurant.table">
+            <field name="name">PL1</field>
+            <field name="seats" eval="2" />
+            <field name="shape">square</field>
+            <field name="position_h" eval="50.00" />
+            <field name="position_v" eval="50.00" />
+            <field name="width" eval="100.00" />
+            <field name="height" eval="100.00" />
+            <field name="color">#35D374</field>
+            <field name="floor_id" ref="restaurant_para_llever_floor" />
+        </record>
+    </data>
+</odoo>
