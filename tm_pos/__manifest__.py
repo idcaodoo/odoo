@@ -11,7 +11,6 @@
     'sequence': 7,
     'depends': ['pos_restaurant', 'pos_preparation_display'],
     'data': [
-        'static/description/index.html',
         'data/res_partner_data.xml',
         'data/restaurant_floor_data.xml',
         'views/pos_order_views.xml'
