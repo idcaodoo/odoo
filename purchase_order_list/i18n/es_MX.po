@@ -1,0 +1,225 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* purchase_order_list
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-17 22:34+0000\n"
+"PO-Revision-Date: 2024-05-17 17:42-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.3\n"
+
+#. module: purchase_order_list
+#: model_terms:ir.ui.view,arch_db:purchase_order_list.purchase_list_kanban_view
+msgid "<strong>Create Date:</strong>"
+msgstr "<strong>Fecha de creación:</strong>"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list__allowed_partners
+msgid "Allowed Supplier"
+msgstr "Proveedor Permitido"
+
+#. module: purchase_order_list
+#: model_terms:ir.ui.view,arch_db:purchase_order_list.purchase_list_form_view
+msgid "Confirm Purchase Orders & Picking"
+msgstr "Confirmar Órdenes de Compra y Picking"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list__confirm_order_and_entry
+msgid "Confirmed orders and Entries"
+msgstr "Órdenes y Entradas Confirmadas"
+
+#. module: purchase_order_list
+#: model:ir.model,name:purchase_order_list.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list__create_uid
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list_line__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list__create_date
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list_line__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list__display_name
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list_line__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: purchase_order_list
+#: model:ir.model.fields.selection,name:purchase_order_list.selection__purchase_list__state__done
+msgid "Done"
+msgstr "Hecho"
+
+#. module: purchase_order_list
+#: model_terms:ir.ui.view,arch_db:purchase_order_list.purchase_list_kanban_view
+#: model_terms:ir.ui.view,arch_db:purchase_order_list.purchase_list_tree_view
+msgid "Generate Purchase List"
+msgstr "Generar Lista de Compras"
+
+#. module: purchase_order_list
+#: model_terms:ir.ui.view,arch_db:purchase_order_list.purchase_list_search_view
+msgid "Group by"
+msgstr "Agrupar por"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list__id
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list_line__image_1920
+msgid "Image"
+msgstr "Imagen"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list__write_uid
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list_line__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list__write_date
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list_line__write_date
+msgid "Last Updated on"
+msgstr "Última modificación en"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list__missing_product
+msgid "Missing Product"
+msgstr "Producto Faltante"
+
+#. module: purchase_order_list
+#: model_terms:ir.ui.view,arch_db:purchase_order_list.purchase_list_search_view
+msgid "Missing Products"
+msgstr "Productos Faltantes"
+
+#. module: purchase_order_list
+#: model:ir.model.fields.selection,name:purchase_order_list.selection__purchase_list__state__ongoing
+msgid "Ongoing"
+msgstr "En curso"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list__name
+msgid "Order Reference"
+msgstr "Referencia Orden"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list_line__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list_line__product_name
+msgid "Product Name"
+msgstr "Nombre."
+
+#. module: purchase_order_list
+#: model:ir.actions.act_window,name:purchase_order_list.purchase_list_act_window
+#: model:ir.model,name:purchase_order_list.model_purchase_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list__purchase_list_lines
+#: model:ir.ui.menu,name:purchase_order_list.purchase_list_menu
+#: model_terms:ir.ui.view,arch_db:purchase_order_list.purchase_list_form_view
+msgid "Purchase List"
+msgstr "Lista de Compra"
+
+#. module: purchase_order_list
+#: model:ir.model,name:purchase_order_list.model_purchase_list_line
+msgid "Purchase List Line"
+msgstr "Linea de Lista de Compra"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list__purchase_ids
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list_line__purchase_order_ids
+msgid "Purchase Orders"
+msgstr "Órdenes de Compra"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list_line__product_qty
+msgid "Purchase Qty"
+msgstr "QTY Compra"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list_line__list_id
+msgid "PurchaseListID"
+msgstr "PurchaseListID"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list__purchased
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list_line__purchased
+#: model_terms:ir.ui.view,arch_db:purchase_order_list.purchase_list_search_view
+msgid "Purchased"
+msgstr "Comprado"
+
+#. module: purchase_order_list
+#: model_terms:ir.ui.view,arch_db:purchase_order_list.purchase_list_form_view
+msgid "QTY"
+msgstr "QTY"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list_line__orderpoint_ids
+msgid "Reordering Rules"
+msgstr "Reglas abastecimiento"
+
+#. module: purchase_order_list
+#. odoo-python
+#: code:addons/purchase_order_list/models/purchase_list.py:0
+#, python-format
+msgid ""
+"Sorry! You can't delete this customer. Please contact to Developer for more "
+"information."
+msgstr ""
+"¡Lo siento! No puedes eliminar este cliente. Por favor, contacta al "
+"desarrollador para más información."
+
+#. module: purchase_order_list
+#. odoo-python
+#: code:addons/purchase_order_list/models/purchase_list.py:0
+#, python-format
+msgid ""
+"Sorry, You can not Confirm Purchase Orders & Picking when all records are "
+"not purchased or Records has been Confirm ago."
+msgstr ""
+"Lo siento, no puedes Confirmar Órdenes de Compra y Picking cuando no se han "
+"comprado todos los registros o los registros fueron confirmados hace tiempo."
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list__state
+msgid "State"
+msgstr "Estado"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list__supplier_ids
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list_line__supplier_ids
+msgid "Supplier"
+msgstr "Proveedor"
+
+#. module: purchase_order_list
+#: model:ir.model.fields,field_description:purchase_order_list.field_purchase_list__supplier_name
+msgid "Supplier Name"
+msgstr "Nombre del proveedor"
+
+#. module: purchase_order_list
+#: model_terms:ir.ui.view,arch_db:purchase_order_list.purchase_list_search_view
+msgid "Suppliers"
+msgstr "Proveedores"
+
+#. module: purchase_order_list
+#: model_terms:ir.ui.view,arch_db:purchase_order_list.purchase_list_search_view
+msgid "Unpurchased"
+msgstr "No comprado"

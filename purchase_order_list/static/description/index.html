@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación del Módulo de Lista de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p, li {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desarrollo de la Lista de Compras – Odoo 17 EE</h1>
+    <p>Este documento describe las funcionalidades del módulo de Lista de Compras, diseñado para optimizar el proceso de pedidos de compra en Odoo mediante la introducción de funcionalidades avanzadas y características personalizadas.</p>
+    
+    <h2>Funcionalidades del Módulo</h2>
+    <ol>
+        <li>
+            <strong>Se añade un nuevo menú en Compras:</strong>
+            Se crea un menú denominado "Lista de Compras" dentro del módulo de Compras.
+
+        </li>
+        <li>
+            <strong>Funcionalidad del botón para generar la lista de compra:</strong>
+            Se incluye un botón denominado "Generar Lista de Compra". Al presionar este botón, se recuperan automáticamente todos los productos encontrados en las órdenes de compra en estado de "RFQ" o "Cotización de compra".
+        </li>
+        <li>
+            <strong>Visualización y filtrado de la lista:</strong>
+            Se presenta los productos en una lista tipo checklist, mostrando las columnas "Nombre del Producto", un "Checkbox" para marcarlos como comprados y una columna opcional Imagen. La lista permite filtrar por proveedor para facilitar la gestión de las compras.
+        </li>
+        <li>
+            <strong>Confirmación automática de pedidos y entradas:</strong>
+            Se añade un botón llamado "Confirmar ordenes de compra y Picking " que, al ser presionado, confirma automáticamente los pedidos de venta y sus entradas asociadas con la lista de compras.
+        </li>
+    </ol>
+
+    </body>
+</html>

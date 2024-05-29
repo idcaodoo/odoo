@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="res_partner_not_purchased" model="res.partner">
+            <field name="company_type">person</field>
+            <field name="customer_rank" eval="1" />
+            <field name="name">Not purchased</field>
+        </record>
+    </data>
+</odoo>
