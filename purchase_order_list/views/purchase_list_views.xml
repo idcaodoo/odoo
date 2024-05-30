@@ -40,19 +40,25 @@
                         </group>
                         <notebook>
                             <page name="purchase_list" string="Purchase List">
-                                <field name="purchase_list_lines">
-                                    <tree editable="bottom" multi_edit="1" delete="false" create="false">
-                                        <field name="image_1920" class="o_clickable" widget="image" options="{'size': [100, 100]}" optional="hide"/>
-                                        <field name="product_name" readonly="1" widget="section_and_note_text"/>
+                                <field name="purchase_list_lines" force_save="1">
+                                    <tree editable="bottom"
+                                          class="table-striped"
+                                          multi_edit="1" delete="false" create="false">
+                                        <field name="image_1920" class="o_clickable" widget="image"
+                                               options="{'size': [100, 100]}" optional="hide"/>
+                                        <field name="product_name" readonly="1" force_save="1" />
+                                        <field name="product_id" force_save="1" optional="hide"/>
                                         <field name="product_qty" width="5%" readonly="1" force_save="1" string="QTY"/>
                                         <field name="purchased" width="5%" widget="boolean_toggle"/>
                                     </tree>
                                     <form>
                                         <sheet>
                                             <group>
-                                                <field name="image_1920" class="o_clickable" widget="image" options="{'size': [100, 100]}" optional="hide"/>
-                                                <field name="product_name" readonly="1" widget="section_and_note_text"/>
+                                                <field name="image_1920" class="o_clickable" widget="image"
+                                                       options="{'size': [100, 100]}" optional="hide"/>
+                                                <field name="product_name" readonly="1" />
                                                 <field name="product_qty" string="QTY"/>
+                                                <field name="product_id" force_save="1" invisible="1"/>
                                                 <field name="purchased" widget="boolean_toggle"/>
                                                 <field name="purchase_order_ids" widget="many2many_tags"/>
                                                 <field name="supplier_ids" widget="many2many_tags"/>
