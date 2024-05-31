@@ -18,7 +18,11 @@
     ],
     'description': 'static/description/index.html',
     'images': [],
-    'assets': {},
+    'assets': {
+        'web.assets_backend': [
+            'purchase_order_list/static/src/css/custom_table_style.css',
+        ],
+    },
     'installable': True,
     'application': False,
     'license': 'OPL-1',

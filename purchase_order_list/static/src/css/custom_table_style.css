@@ -1,0 +1,24 @@
+/* custom_table_style.css */
+
+/* Añadir borde inferior a cada fila */
+.custom-bordered tbody tr {
+    border-bottom: 1px solid black; /* Borde inferior de 1px sólido y negro */
+}
+
+/* Estilo para las celdas */
+.custom-bordered td {
+    padding: 10px; /* Espaciado dentro de las celdas */
+}
+
+/* Estilo para las cabeceras */
+.custom-bordered th {
+    background-color: #555; /* Color de fondo para el encabezado */
+    color: #fff; /* Color del texto del encabezado */
+    padding: 10px; /* Espaciado dentro de las celdas del encabezado */
+    text-transform: uppercase; /* Transformar texto del encabezado a mayúsculas */
+}
+
+/* Color de fondo más oscuro para las filas impares */
+.custom-bordered tr:nth-child(odd) {
+    background-color: #a37497; /* Odoo */
+}

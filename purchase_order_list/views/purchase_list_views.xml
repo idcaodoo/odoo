@@ -42,7 +42,7 @@
                             <page name="purchase_list" string="Purchase List">
                                 <field name="purchase_list_lines" force_save="1">
                                     <tree editable="bottom"
-                                          class="table-striped"
+                                          class="custom-bordered"
                                           multi_edit="1" delete="false" create="false">
                                         <field name="image_1920" class="o_clickable" widget="image"
                                                options="{'size': [100, 100]}" optional="hide"/>
