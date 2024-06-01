@@ -240,7 +240,24 @@ patch(FloorScreen.prototype, {
         }
 
         if (!order) { return; }
-        let { confirmed, payload: note } = await this.popup.add(TextInputPopup, {
+
+        let floorScreenUI = $('.floor-screen.screen');
+        if (floorScreenUI.length >= 1) {
+            floorScreenUI.addClass("d-none");
+        }
+
+        const { confirmed, payload: newPartner } = await this.pos.showTempScreen("PartnerListScreen");
+        if (confirmed) {
+            order.note = "Domicilio";
+            order.set_partner(newPartner);
+            return this.pos.showScreen(order.get_screen_data().name);
+        } else {
+            if (floorScreenUI.length >= 1) {
+                floorScreenUI.removeClass("d-none");
+            }
+        }
+
+        /*let { confirmed, payload: note } = await this.popup.add(TextInputPopup, {
             title: _t("Add note:"),
             startingValue: "",
             placeholder: _t("Enter your note"),
@@ -258,7 +275,7 @@ patch(FloorScreen.prototype, {
             }
             order.set_order_note(order.note);
             return this.pos.showScreen(order.get_screen_data().name);
-        }
+        }*/
         return;
     },
 

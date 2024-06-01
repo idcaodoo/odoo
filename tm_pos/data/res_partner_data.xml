@@ -12,7 +12,7 @@
         <record id="res_partner_cliente_aplicaciones" model="res.partner">
             <field name="company_type">person</field>
             <field name="customer_rank" eval="1" />
-            <field name="name">Cliente Aplicaciones</field>
+            <field name="name">Cliente Domicilio</field>
         </record>
     </data>
 
