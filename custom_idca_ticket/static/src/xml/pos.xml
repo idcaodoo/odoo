@@ -4,9 +4,9 @@
     <xpath expr="//div[hasclass('cashier')]" position="after">
         <t t-if="receipt.partner and props.order.pos.config.enable_customer_info">
             <br/>
-            <div style="text-align: left">
-                <strong>Cliente: </strong><span t-esc="receipt.partner.name"/><br/>
-                <strong>Teléfono: </strong><span t-esc="receipt.partner.phone or 'N/A'"/><br/>
+            <div style="text-align: left; font-size: 15px;">
+                <strong>Cliente: <span t-esc="receipt.partner.name"/></strong><br/>
+                <strong>Teléfono: <span t-esc="receipt.partner.phone or 'N/A'"/></strong><br/>
                 <t t-if="receipt.partner.street">
                     <span t-esc="receipt.partner.street or ''"/>
                 </t>
