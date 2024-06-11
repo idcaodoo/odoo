@@ -12,7 +12,7 @@
     'data': [
         'data/res_partner_data.xml',
         'data/restaurant_floor_data.xml',
-        'data/pos_product_category_data.xml',
+        #'data/pos_product_category_data.xml',
         'views/pos_order_views.xml'
     ],
     'images': [],
