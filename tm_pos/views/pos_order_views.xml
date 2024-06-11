@@ -29,5 +29,21 @@
                 </xpath>
             </field>
         </record>
+
+        <record id="tm_pos_config_inherit_pos_config_view_form" model="ir.ui.view">
+            <field name="name">tm_pos_config_inherit_pos_config_view_form</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='restaurant_on_create']" position="before">
+                    <div id="iface_available_categ_ids" class="row mt16 o_settings_container">
+                        <setting>
+                            <field name="iface_available_categ_ids" widget="many2many_tags"/>
+                        </setting>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </odoo>

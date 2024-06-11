@@ -108,6 +108,12 @@ patch(FloorScreen.prototype, {
                 order.note = "Mostrador";
             }
             order.set_order_note(order.note);
+
+            const mostrador_category = await this.pos.orm.call('pos.category', 'get_mostrador_product_category', [], {pos_config: this.pos.config.id});
+            if (mostrador_category !== false) {
+                this.pos.selectedCategoryId = parseInt(mostrador_category);
+                this.pos.setSelectedCategoryId(mostrador_category);
+            }
             return this.pos.showScreen(order.get_screen_data().name);
         }
         return;
@@ -250,32 +256,18 @@ patch(FloorScreen.prototype, {
         if (confirmed) {
             order.note = "Domicilio";
             order.set_partner(newPartner);
+            const mostrador_category = await this.pos.orm.call('pos.category', 'get_mostrador_product_category', [], {pos_config: this.pos.config.id});
+            if (mostrador_category !== false) {
+                this.pos.selectedCategoryId = parseInt(mostrador_category);
+                this.pos.setSelectedCategoryId(mostrador_category);
+            }
             return this.pos.showScreen(order.get_screen_data().name);
+
         } else {
             if (floorScreenUI.length >= 1) {
                 floorScreenUI.removeClass("d-none");
             }
         }
-
-        /*let { confirmed, payload: note } = await this.popup.add(TextInputPopup, {
-            title: _t("Add note:"),
-            startingValue: "",
-            placeholder: _t("Enter your note"),
-            cancelText: _t("Cancel"),
-            confirmText: _t("Confirm"),
-        });
-        const partner = await this._getPartnerByClienteMostrador("Cliente Aplicaciones");
-        order.set_partner(partner);
-        if (confirmed) {
-            note = note.trim();
-            if (note !== "") {
-                order.note = "Domicilio - " + note;
-            } else {
-                order.note = "Domicilio";
-            }
-            order.set_order_note(order.note);
-            return this.pos.showScreen(order.get_screen_data().name);
-        }*/
         return;
     },
 

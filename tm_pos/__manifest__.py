@@ -6,13 +6,13 @@
     'summary': 'Module help custom POS Screen',
     'website': '',
     'category': 'POS',
-    'description': """
-    """,
+    'description': """""",
     'sequence': 7,
     'depends': ['pos_restaurant', 'pos_preparation_display'],
     'data': [
         'data/res_partner_data.xml',
         'data/restaurant_floor_data.xml',
+        'data/pos_product_category_data.xml',
         'views/pos_order_views.xml'
     ],
     'images': [],
