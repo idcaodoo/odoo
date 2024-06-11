@@ -4,7 +4,7 @@
         <record id="tm_pos_order_service_inherit_form_view" model="ir.ui.view">
             <field name="name">tm_pos_order_service_inherit_form_view</field>
             <field name="model">pos.order</field>
-            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="inherit_id" ref="pos_restaurant.view_pos_pos_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='table_id']" position="after">
                     <field name="table_service_note" />
