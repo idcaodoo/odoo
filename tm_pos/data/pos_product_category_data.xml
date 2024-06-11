@@ -7,7 +7,7 @@
 
         <record model="pos.config" id="pos_restaurant.pos_config_main_restaurant">
             <field name="iface_available_categ_ids"
-                   eval="[(6, 0, [ref('tm_pos.pos_product_category_mostrador'), ref('pos_restaurant.drinks'), ref('pos_restaurant.food')])]" />
+                   eval="[(4, ref('pos_product_category_mostrador'))]" />
         </record>
     </data>
 </odoo>

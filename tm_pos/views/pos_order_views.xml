@@ -6,9 +6,9 @@
             <field name="model">pos.order</field>
             <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
             <field name="arch" type="xml">
-                <!--<xpath expr="//field[@name='table_id']" position="after">
+                <xpath expr="//field[@name='table_id']" position="after">
                     <field name="table_service_note" />
-                </xpath>-->
+                </xpath>
                 <xpath expr="//field[@name='lines']/tree/field[@name='refunded_qty']" position="after">
                     <field name="table_service_note" string="Service Order" invisible="1"/>
                 </xpath>
