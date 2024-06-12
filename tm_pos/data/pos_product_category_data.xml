@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="pos_product_category_mostrador" model="pos.category">
+            <field name="name">Mostrador</field>
+        </record>
+
+        <record model="pos.config" id="pos_restaurant.pos_config_main_restaurant">
+            <field name="iface_available_categ_ids"
+                   eval="[(4, ref('pos_product_category_mostrador'))]" />
+        </record>
+    </data>
+</odoo>

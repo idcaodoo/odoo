@@ -1,6 +1,7 @@
 import logging
 from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError
+from odoo.fields import Command
 
 _logger = logging.getLogger(__name__)
 POSITION_P = 162
@@ -85,3 +86,30 @@ class RestaurantFloorInherit(models.Model):
             if record.id == self.env.ref("tm_pos.restaurant_para_llever_floor").id:
                 raise ValidationError(_("Sorry, You can't delete Para llevar floor."))
         return super(RestaurantFloorInherit, self).unlink()
+
+
+class PosSession(models.Model):
+    _inherit = 'pos.session'
+
+    def _after_load_onboarding_data(self):
+        super()._after_load_onboarding_data()
+        configs = self.config_id.filtered('module_pos_restaurant')
+        if configs:
+            configs.with_context(bypass_categories_forbidden_change=True).write({
+                'iface_available_categ_ids': [(4, Command.link(self.env.ref('tm_pos.pos_product_category_mostrador').id))]
+            })
+
+
+class TMPOSResConfigSetting(models.TransientModel):
+
+    _inherit = "res.config.settings"
+
+    @api.depends('pos_limit_categories', 'pos_config_id')
+    def _compute_pos_iface_available_categ_ids(self):
+        for res_config in self:
+            if not res_config.pos_limit_categories:
+                res_config.pos_iface_available_categ_ids = False
+            else:
+                pos_iface_available_categ_ids = res_config.pos_config_id.iface_available_categ_ids
+                pos_iface_available_categ_ids = pos_iface_available_categ_ids.ids + [self.env.ref('tm_pos.pos_product_category_mostrador').id]
+                res_config.pos_iface_available_categ_ids = [(6, 0, pos_iface_available_categ_ids)]
