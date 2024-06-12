@@ -2,7 +2,7 @@
 <templates id="template" xml:space="preserve">
     <t t-name="custom_idca_ticket.ReceiptHeader" t-inherit="point_of_sale.ReceiptHeader" t-inherit-mode="extension" owl="1">
         <xpath expr="//div[hasclass('pos-receipt-contact')]" position="after">
-            <div t-if="props.data.partner" style="text-align: left; font-size: 15px; padding-top: 10px;">
+            <div t-if="props.data.partner" style="text-align: left; font-size: 13px; padding-top: 5px;">
                 <strong>Cliente: <t t-esc="props.data.partner.name"/></strong><br/>
                 <strong>Teléfono: <t t-esc="props.data.partner.phone or 'N/A'"/></strong><br/>
                 <!-- <t t-if="props.data.partner.vat">
@@ -21,9 +21,11 @@
                     , <t t-esc="props.data.partner.state_id[1] or ''"/>
                 </t>
                 <t t-if="props.data.partner.country_id">
-                    <br/><t t-esc="props.data.partner.country_id[1] or ''"/>
+                    <t t-esc="props.data.partner.country_id[1] or ''"/>
                 </t>
             </div>
         </xpath>
+
     </t>
+    
 </templates>

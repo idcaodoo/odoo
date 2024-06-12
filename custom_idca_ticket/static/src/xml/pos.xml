@@ -3,8 +3,7 @@
 <t t-name="OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
     <xpath expr="//div[hasclass('cashier')]" position="after">
         <t t-if="receipt.partner and props.order.pos.config.enable_customer_info">
-            <br/>
-            <div style="text-align: left; font-size: 15px;">
+            <div style="text-align: left; font-size: 13px;">
                 <strong>Cliente: <span t-esc="receipt.partner.name"/></strong><br/>
                 <strong>Teléfono: <span t-esc="receipt.partner.phone or 'N/A'"/></strong><br/>
                 <t t-if="receipt.partner.street">
@@ -20,10 +19,10 @@
                     , <span t-esc="receipt.partner.state_id[1] or ''"/>
                 </t>
                 <t t-if="receipt.partner.country_id">
-                    <br/><span t-esc="receipt.partner.country_id[1] or ''"/>
+                    <span t-esc="receipt.partner.country_id[1] or ''"/>
                 </t>
             </div>
         </t>
-    </xpath>    
+    </xpath>
 </t>
 </templates>
