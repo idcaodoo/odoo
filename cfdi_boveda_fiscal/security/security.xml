@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Recode Rules -->   
+    <record model="ir.rule" id="fiel_own_records_rule">
+        <field name="name">Registros propios de FIEL</field>
+        <field name="model_id" ref="model_cfdi_download_fiel"/>
+        <field name="domain_force">[('create_uid', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record model="ir.rule" id="request_own_records_rule">
+        <field name="name">Registros propios de solicitudes</field>
+        <field name="model_id" ref="model_cfdi_download_request"/>
+        <field name="domain_force">[('create_uid', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record model="ir.rule" id="packs_own_records_rule">
+        <field name="name">Registros propios de paquetes</field>
+        <field name="model_id" ref="model_cfdi_download_pack"/>
+        <field name="domain_force">[('request_id.create_uid', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record model="ir.rule" id="fiel_all_records_rule">
+        <field name="name">Todas las FIEL</field>
+        <field name="model_id" ref="model_cfdi_download_fiel"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('base.group_system'))]"/>
+    </record>
+
+     <record model="ir.rule" id="request_all_records_rule">
+        <field name="name">Todas las solicitudes CFDI</field>
+        <field name="model_id" ref="model_cfdi_download_request"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('base.group_system'))]"/>
+    </record>
+
+     <record model="ir.rule" id="pack_all_records_rule">
+        <field name="name">Todas los paquetes CFDI</field>
+        <field name="model_id" ref="model_cfdi_download_pack"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('base.group_system'))]"/>
+    </record>
+   
+</odoo>

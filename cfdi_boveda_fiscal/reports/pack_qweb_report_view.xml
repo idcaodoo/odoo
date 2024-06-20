@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="pack_qweb_html_report_id" model="ir.actions.report">
+            <field name="name">Previsualizar</field>
+            <field name="model">cfdi.download.pack</field>
+            <field name="report_type">qweb-html</field>
+            <field name="report_name">cfdi_boveda_fiscal.pack_qweb_report</field>
+            <field name="report_file">Paquetes en HTML</field>
+            <field name="print_report_name">'%s' % (object.id_paquete)</field>
+            <field name="binding_model_id" ref="model_cfdi_download_pack"/>
+        </record>
+
+        <template id="pack_qweb_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <!-- <t t-call="web.external_layout"> -->
+                    <div class="page">
+                        <style>
+                            .styled-table {
+                            border-collapse: collapse;
+                            margin: 10px 0;
+                            font-size: 0.8em;
+                            font-family: sans-serif;
+                            min-width: 500px;
+                            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+                            }
+                            .styled-table thead tr {
+                            background-color: #009879;
+                            color: #ffffff;
+                            text-align: center;
+                            }
+                            .styled-table th {
+                            min-width: 150px;
+                            },
+
+                            .styled-table tbody tr {
+                            border-bottom: 1px solid #dddddd;
+                            text-align: center;
+                            }
+
+                            .styled-table tbody tr:nth-of-type(even) {
+                            background-color: #f3f3f3;
+                            }
+
+                            .styled-table tbody tr:last-of-type {
+                            border-bottom: 2px solid #009879;
+                            }
+                            .styled-table tbody tr.active-row {
+                            font-weight: bold;
+                            color: #009879;
+                            }
+                        </style>
+                        <!-- -->
+                        <span style="font-size: 0.9em;  font-family: sans-serif; color: black;">ID de paquete: <span style="font-size: 0.9em;  font-family: sans-serif; color: gray;" t-esc="o.id_paquete + ' (' + str(o.numero_cfdis) + ' CFDIs)'"/></span>
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>UUID</th>
+                                    <th>RFC emisor</th>
+                                    <th>Nombre emisor</th>
+                                    <th>RFC receptor</th>
+                                    <th>Nombre receptor</th>
+                                    <th>Tipo</th>
+                                    <th>Serie</th>
+                                    <th>Folio</th>
+                                    <th>Fecha</th>
+                                    <th>SubTotal</th>
+                                    <th>Descuento</th>
+                                    <th>Total impuestos trasladados</th>
+                                    <th>Tipo impuesto trasladado</th>
+                                    <th>Total impuestos Retenidos</th>
+                                    <th>Tipo impuesto retenido</th>
+                                    <th>Total</th>
+                                    <th>Metodo de pago</th>
+                                    <th>Forma de pago</th>
+                                    <th>Moneda</th>
+                                    <th>Tipo de cambio</th>
+                                    <th>Version</th>
+                                    <th>Uso CFDI</th>
+                                    <th>Regimen fiscal</th>
+                                    <th>Conceptos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach = "o.generate_xml_vals()" t-as = "xml">
+                                    <tr>
+                                        <td style="text-align: center;"><span t-esc="xml['uuid']"/></td>
+                                        <td style="text-align: center;"><span t-esc="xml['emisor']"/></td>
+                                        <td style="text-align: left;"><span t-esc="xml['rs_emisor']"/></td>
+                                        <td style="text-align: center;"><span t-esc="xml['receptor']"/></td>
+                                        <td style="text-align: left;"><span t-esc="xml['rs_receptor']"/></td>
+                                        <td style="text-align: center;"><span t-esc="xml['TipoDeComprobante']"/></td>
+                                        <td style="text-align: center;"><span t-esc="xml['Serie']"/></td>
+                                        <td style="text-align: center;"><span t-esc="xml['Folio']"/></td>
+                                        <td style="text-align: center;"><span t-esc="xml['Fecha']"/></td>
+                                        <td style="text-align: right;"><span t-esc="xml['SubTotal']"/></td>
+                                        <td style="text-align: right;"><span t-esc="xml['Descuento']"/></td>
+                                        <td style="text-align: right;"><span t-esc="xml['TotalImpuestosTrasladados']"/></td>
+                                        <td style="text-align: center;"><span t-esc="xml['TipoImpuestoTrasladado']"/></td>
+                                        <td style="text-align: right;"><span t-esc="xml['TotalImpuestosRetenidos']"/></td>
+                                        <td style="text-align: right;"><span t-esc="xml['TipoImpuestoRetenido']"/></td>
+                                        <td style="text-align: right;"><span t-esc="xml['Total']"/></td>
+                                        <td style="text-align: center;"><span t-esc="xml['MetodoPago']"/></td>
+                                        <td style="text-align: center;"><span t-esc="xml['FormaPago']"/></td>
+                                        <td style="text-align: center;"><span t-esc="xml['Moneda']"/></td>
+                                        <td style="text-align: center;"><span t-esc="xml['TipoCambio']"/></td>
+                                        <td style="text-align: center;"><span t-esc="xml['Version']"/></td>
+                                        <td style="text-align: center;"><span t-esc="xml['UsoCFDI']"/></td>
+                                        <td style="text-align: center;"><span t-esc="xml['RegimenFiscal']"/></td>
+                                        <td style="text-align: center;">...</td>
+
+                                    </tr>
+                                </t>
+                                <!-- <tr class="active-row">
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr> -->
+                                <!-- and so on... -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- </t> -->
+                    <p style="page-break-after:always"></p>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

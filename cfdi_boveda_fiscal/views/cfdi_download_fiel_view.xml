@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="cfdi_download_fiel_tree">
+            <field name="name">cfdi.download.fiel.tree</field>
+            <field name="model">cfdi.download.fiel</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="rfc"/>
+                    <field name="cer_name"/>
+                    <field name="cer_file" invisible="1"/>
+                    <field name="key_name"/>
+                    <field name="key_file" invisible="1"/>
+                    <field name="password" password="True" />
+                    <field name="create_uid" string="Creado por"  readonly="1"/>
+                    <field name="company_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cfdi_download_fiel_form">
+            <field name="name">cfdi.download.fiel.form</field>
+            <field name="model">cfdi.download.fiel</field>
+            <field name="arch" type="xml">
+                <form string="FIELD">
+                    <sheet>
+                        <group>
+                            <field name="rfc"/>
+                            <field name="cer_name" invisible="1"/>
+                            <field name="cer_file" filename="cer_name"/>
+                            <field name="key_name" invisible="1"/>
+                            <field name="key_file" filename="key_name"/>
+                            <field name="password" password="True" />
+                            <field name="company_id" invisible="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="cfdi_download_fiel_action" model="ir.actions.act_window">
+            <field name="name">FIEL's</field>
+            <field name="res_model">cfdi.download.fiel</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu -->
+        <menuitem id="cfdi_download_fiel_menu" name="FIEL" parent="cfdi_boveda_fiscal_menu"
+                  action="cfdi_download_fiel_action"
+                  sequence="500"/>
+    </data>
+</odoo>

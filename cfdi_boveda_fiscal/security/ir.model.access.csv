@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cfdi_download_request,access_cfdi_download_request,model_cfdi_download_request,,1,1,1,1
+access_cfdi_download_pack,access_cfdi_download_pack,model_cfdi_download_pack,,1,1,1,0
+access_cfdi_download_fiel,access_cfdi_download_fiel,model_cfdi_download_fiel,,1,1,1,0
+access_cfdi_download_data,access_cfdi_download_data,model_cfdi_download_data,,1,1,1,0
+access_request_wizard,access_request_wizard,model_request_wizard,,1,1,1,1

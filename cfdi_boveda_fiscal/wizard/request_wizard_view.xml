@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Form view -->
+        <record model="ir.ui.view" id="request_wizard_form">
+            <field name="name">request.wizard.form</field>
+            <field name="model">request.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Solicitud de descarga">
+                    <group>
+                        <group>
+                            <field name="request_type" required="True"/>
+                            <field name="fiel_id" readonly="1" force_save="1" options="{'no_create': True, 'no_open':True}"/>
+                            <field name="fecha_inicial" required="1"/>
+                            <field name="fecha_final" required="1"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="action_request" string="Solicitar" type="object" class="oe_highlight" />
+                        <button special="cancel" string="Cerrar" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="request_wizard_action" model="ir.actions.act_window">
+            <field name="name">Solicitar descarga</field>
+            <field name="res_model">request.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="request_wizard_form"/>
+            <field name="target">new</field>
+            <field name="context">{'default_request_type': 'recibidos'}</field>
+        </record>
+
+        <menuitem id="request_wizard_menu"
+                  parent="cfdi_boveda_fiscal_menu"
+                  sequence="50"
+                  action="request_wizard_action"/>
+    </data>
+</odoo>

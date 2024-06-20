@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="cfdi_download_request_search" model="ir.ui.view">
+            <field name="name">cfdi.download.request.search</field>
+            <field name="model">cfdi.download.request</field>
+            <field name="arch" type="xml">
+                <search>
+                    <filter string="CFDI's emitidos" name="request_type" domain="[('request_type', '=', 'emitidos')]"/>
+                    <filter string="CFDI's recibidos" name="request_type" domain="[('request_type', '=', 'recibidos')]"/>
+                    <separator />
+                    <filter string="Finalizadas" name="request_type" domain="[('estado_solicitud_type', '=', '0')]"/>
+                    <filter string="Aceptadas" name="request_type" domain="[('estado_solicitud_type', '=', '1')]"/>
+                    <filter string="En proceso " name="request_type" domain="[('estado_solicitud_type', '=', '2')]"/>
+                    <filter string="Terminadas" name="request_type" domain="[('estado_solicitud_type', '=', '3')]"/>
+                    <filter string="Con error" name="request_type" domain="[('estado_solicitud_type', '=', '4')]"/>
+                    <filter string="Rechazadas" name="request_type" domain="[('estado_solicitud_type', '=', '5')]"/>
+                    <filter string="Vencidas" name="request_type" domain="[('estado_solicitud_type', '=', '6')]"/>
+                    <filter name="request_type" string="Tipo de solicitud" context="{'group_by':'request_type'}"/>
+                    <filter name="codigo_estado_solicitud_type" string="Esatdo solicitud" context="{'group_by':'codigo_estado_solicitud_type'}"/>
+                    <filter name="rfc_solicitante" string="RFC" context="{'group_by':'rfc_solicitante'}"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cfdi_download_request_tree">
+            <field name="name">cfdi.download.request.tree</field>
+            <field name="model">cfdi.download.request</field>
+            <field name="arch" type="xml">
+                <tree create="0"
+                      decoration-warning="estado_solicitud_type=='3'"
+                      decoration-success="estado_solicitud_type=='0'"
+                      decoration-info="estado_solicitud_type in ['1','2']"
+                      decoration-muted="estado_solicitud_type in ['5','6']"
+                      decoration-danger="estado_solicitud_type=='4'" >
+                    <field name="fiel_id" invisible="1"/>
+                    <field name="id_solicitud" />
+                    <field name="rfc_solicitante" optional="hide"/>
+                    <field name="request_type"/>
+                    <field name="rfc_emisor" invisible="1"/>
+                    <field name="rfc_receptor" invisible="1"/>
+                    <field name="create_uid" string="Creado por" optional="hide"/>
+                    <field name="create_date" string="Solicitada el" optional="hide"/>
+                    <field name="fecha_inicial"/>
+                    <field name="fecha_final"/>
+                    <field name="cod_estatus" optional="hide"/>
+                    <field name="mensaje" optional="hide"/>
+                    <field name="cod_estatus_ver" optional="hide"/>
+                    <field name="estado_solicitud" optional="hide"/>
+                    <field name="estado_solicitud_type"/>
+                    <field name="codigo_estado_solicitud" optional="hide"/>
+                    <field name="codigo_estado_solicitud_type"/>
+                    <field name="mensaje_ver" optional="hide"/>
+                    <field name="num_paquetes" />
+                    <field name="numero_cfdis"/>
+                    <field name="paquetes" optional="hide"/>
+                    <field name="company_id" invisible="1"/>
+                    <field name="write_date" string="Última revisión" widget="remaining_days"/>
+                    <button name="verfication_request" type="object" class="fa fa-refresh" title='Verificar descarga SAT'
+                            invisible="estado_solicitud not in ['1','2',False]" />
+                    <button name="download_request" type="object" class="fa fa-download" title='Descargar paquetes SAT'
+                            invisible="estado_solicitud not in ['3']" />
+                    <button name="view_cfdis" type="object" class="fa fa-file-code-o" title='Ver CFDIs'
+                            invisible="estado_solicitud not in ['0']" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cfdi_download_request_form">
+            <field name="name">cfdi.download.request.form</field>
+            <field name="model">cfdi.download.request</field>
+            <field name="arch" type="xml">
+                <form string="Solicitud de descarga">
+                    <sheet>
+                        <group>
+                            <field name="fiel_id" invisible="1"/>
+                            <field name="id_solicitud"/>
+                            <field name="rfc_solicitante"/>
+                            <field name="request_type"/>
+                            <field name="rfc_emisor" invisible="1"/>
+                            <field name="rfc_receptor" invisible="1"/>
+                            <field name="fecha_inicial"/>
+                            <field name="fecha_final"/>
+                            <field name="cod_estatus" optional="hide"/>
+                            <field name="mensaje"/>
+                            <field name="cod_estatus_ver" optional="hide"/>
+                            <field name="estado_solicitud" optional="hide"/>
+                            <field name="estado_solicitud_type"/>
+                            <field name="codigo_estado_solicitud" optional="hide"/>
+                            <field name="codigo_estado_solicitud_type"/>
+                            <field name="mensaje_ver" optional="hide"/>
+                            <field name="numero_cfdis"/>
+                            <field name="paquetes" optional="hide"/>
+                            <field name="company_id" invisible="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="cfdi_download_request_action" model="ir.actions.act_window">
+            <field name="name">Solicitudes de descarga</field>
+            <field name="res_model">cfdi.download.request</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem id="cfdi_boveda_fiscal_menu"
+                  name="Bóveda fiscal"
+                  parent="account.menu_finance"
+                  sequence="10"/>
+
+        <menuitem id="cfdi_download_request_menu"
+                  name="Solicitudes de descarga"
+                  parent="cfdi_boveda_fiscal_menu"
+                  action="cfdi_download_request_action"
+                  sequence="100"/>
+    </data>
+</odoo>

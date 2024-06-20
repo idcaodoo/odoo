@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="cfdi_download_data_search" model="ir.ui.view">
+            <field name="name">cfdi.download.data.search</field>
+            <field name="model">cfdi.download.data</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="request_id"/>
+                    <field name="pack_id"/>
+                    <field name="uuid"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cfdi_download_data_tree">
+            <field name="name">cfdi.download.data.tree</field>
+            <field name="model">cfdi.download.data</field>
+            <field name="arch" type="xml">
+                <tree create="0">
+                    <field name="uuid"/>
+                    <field name="filename" optional="hide"/>
+                    <field name="request_id" optional="hide"/>
+                    <field name="pack_id" optional="hide"/>
+                    <field name="emisor"/>
+                    <field name="rs_emisor"/>
+                    <field name="fecha"/>
+                    <field name="tipo"/>
+                    <field name="serie"/>
+                    <field name="folio"/>
+                    <field name="total"/>
+                    <field name="conceptos" optional="hide"/>
+                    <field name="invoice_id"/>
+                    <field name="invoice_payment_state"/>
+                    <field name="company_id" invisible="1"/>
+                    <button name="create_invoice" type="object" class="fa fa-file" title='Crear factura' invisible="invoice_id != False" />
+                    <button name="view_invoice" type="object" class="fa fa-file-text-o" title='Ver factura' invisible="invoice_id == False" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="cfdi_download_data_action" model="ir.actions.act_window">
+            <field name="name">CFDI's de solicitudes</field>
+            <field name="res_model">cfdi.download.data</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <record model="ir.actions.server" id="action_create_invoice">
+            <field name="name">Crear facturas</field>
+            <field name="model_id" ref="model_cfdi_download_data"/>
+            <field name="binding_model_id" ref="model_cfdi_download_data"/>
+            <field name="binding_view_types">list</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="code">
+                for record in records:
+                record.create_invoice()
+            </field>
+        </record>
+
+        <!-- Menu -->
+        <menuitem id="cfdi_download_data_menu"
+                  name="CFDI's de solicitudes"
+                  parent="cfdi_boveda_fiscal_menu"
+                  action="cfdi_download_data_action"
+                  sequence="300"/>
+    </data>
+</odoo>
