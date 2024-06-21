@@ -104,15 +104,12 @@
             <field name="view_mode">tree</field>
         </record>
 
-        <menuitem id="cfdi_boveda_fiscal_menu"
-                  name="Bóveda fiscal"
-                  parent="account.menu_finance"
-                  sequence="10"/>
+        <menuitem id="cfdi_boveda_fiscal_menu" name="Bóveda fiscal" groups="account.group_account_readonly,account.group_account_invoice" parent="account_accountant.menu_accounting" sequence="30"/>
 
         <menuitem id="cfdi_download_request_menu"
                   name="Solicitudes de descarga"
                   parent="cfdi_boveda_fiscal_menu"
                   action="cfdi_download_request_action"
-                  sequence="100"/>
+                  sequence="20"/>
     </data>
 </odoo>

@@ -7,7 +7,7 @@
     "category": '',
     "website": "",
     "description": """Este módulo ...""",
-    "depends": ['base', 'account'],
+    "depends": ['base', 'account_accountant'],
     "data": [
         'security/ir.model.access.csv',
         'reports/pack_qweb_report_view.xml',                        

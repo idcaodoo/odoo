@@ -30,9 +30,7 @@ class RequestWizard(models.TransientModel):
     def on_change_request_type(self):
         if self.request_type:
             fiel_id = self.env['cfdi.download.fiel'].search([('company_id', '=', self.env.company.id)], limit=1)
-            if not fiel_id:
-                raise UserError('No existe un registro de FIEL.')
-            self.fiel_id = fiel_id.id
+            self.fiel_id = fiel_id and fiel_id.id or False
             self.fecha_inicial = False
             self.fecha_final = False
     
@@ -51,10 +49,16 @@ class RequestWizard(models.TransientModel):
     def action_request(self):
         # Solicitar descarga
         # Validamos periodo
+        if not self.fecha_inicial and not self.fecha_final:
+            return True
         delta = self.fecha_final - self.fecha_inicial
         if delta.days > 31:
             raise UserError("Solo puede hacer solictudes por un periodo de hasta 31 días.")                      
         #
+        if not self.fiel_id.cer_file:
+            raise UserError("Archivo (.cer) debe ser obligatorio.")
+        if not self.fiel_id.key_file:
+            raise UserError("Archivo (.key) debe ser obligatorio.")
         cer_der = b64decode(self.fiel_id.cer_file)
         key_der = b64decode(self.fiel_id.key_file)
         password = self.fiel_id.password
