@@ -86,7 +86,7 @@ class CfdiDownloadData(models.Model):
                         'tax_group_id': tax_id.tax_group_id.id,
                         'tax_base_amount': float(traslado.get('Base')),
                         'tax_repartition_line_id': tax_repartition_line_id.id if tax_repartition_line_id else False,
-                        'exclude_from_invoice_tab': True,
+                        #'exclude_from_invoice_tab': True,
                     }
                     self.env['account.move.line'].with_context(check_move_validity=False).create(tax_line)
                 # Linea de débito
@@ -108,7 +108,7 @@ class CfdiDownloadData(models.Model):
                     'account_id': invoice_id.partner_id.property_account_payable_id.id,
                     'quantity': float(c.get('Cantidad')),
                     'credit': total_concepto,
-                    'exclude_from_invoice_tab': True,
+                    #'exclude_from_invoice_tab': True,
                     'tax_ids': tax_ids if tax_ids else False
                     }
                 self.env['account.move.line'].with_context(check_move_validity=False).create(credit_line)
