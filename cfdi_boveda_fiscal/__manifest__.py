@@ -15,6 +15,7 @@
         'views/cfdi_download_fiel_view.xml',       
         'views/cfdi_download_pack_view.xml',
         'views/cfdi_download_data_view.xml',
+        'views/account_move_view.xml',
         'wizard/request_wizard_view.xml',                                
     ],
     "external_dependencies": {
