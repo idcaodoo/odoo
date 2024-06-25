@@ -18,7 +18,7 @@ class CfdiDownloadData(models.Model):
     rs_emisor = fields.Char(string="Razón social emisor", required=True)
     fecha = fields.Char(string="Fecha", required=True)
     tipo = fields.Char(string="Tipo", required=True)
-    serie = fields.Char(string="Serie", required=True)
+    serie = fields.Char(string="Serie")
     folio = fields.Char(string="Folio", required=True)
     total = fields.Char(string="Total", required=True)
     conceptos = fields.Text(string="Conceptos")
