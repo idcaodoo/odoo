@@ -70,7 +70,7 @@ class CfdiDownloadData(models.Model):
                             traslado.get('Impuesto'), traslado('TasaOCuota')))
                     tax_ids.append((4, tax_id.id, 0))
                     tax_repartition_line_id = self.env['account.tax.repartition.line'].search([
-                        ('invoice_tax_id', '=', tax_id.id),
+                        ('tax_id', '=', tax_id.id),
                         ('company_id', '=', self.env.company.id),
                         ('repartition_type', '=', 'tax')
                     ], limit=1)
