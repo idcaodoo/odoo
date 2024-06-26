@@ -3,7 +3,7 @@
     "name": 'CFDI Bóveda fiscal',
     'license': 'GPL-3',
     "version": '17.1',
-    "author": '...',
+    "author": 'IDCA',
     "category": '',
     "website": "",
     "description": """Este módulo ...""",
