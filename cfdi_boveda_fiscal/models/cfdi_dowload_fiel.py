@@ -14,13 +14,13 @@ class CfdiDownloadFiel(models.Model):
     key_name = fields.Char(string="Llave")
     key_file = fields.Binary(string='Archivo (.key)', required=True)
     password = fields.Char(string='Contraseña', required=True)
-    company_id = fields.Many2one(comodel_name="res.company", string="Compañia", default=lambda self: self.env.company, copy=True)
+    company_id = fields.Many2one("res.company", string="Compañia", default=lambda self: self.env.company, copy=True)
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         # Obtenemos las FIELS del usuario
         n = self.search_count([])
         if n > 0:        
             raise UserError('Ya existe un registro de FIEL.')
-        res = super(CfdiDownloadFiel, self).create(vals)       
+        res = super(CfdiDownloadFiel, self).create(vals_list)
         return res

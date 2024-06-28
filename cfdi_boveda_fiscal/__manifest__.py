@@ -3,7 +3,7 @@
     "name": 'CFDI Bóveda fiscal',
     'license': 'GPL-3',
     "version": '17.1',
-    "author": 'IDCA',
+    "author": '...',
     "category": '',
     "website": "",
     "description": """Este módulo ...""",
@@ -15,8 +15,8 @@
         'views/cfdi_download_fiel_view.xml',       
         'views/cfdi_download_pack_view.xml',
         'views/cfdi_download_data_view.xml',
-        'views/account_move_view.xml',
-        'wizard/request_wizard_view.xml',                                
+        'views/account_move_views.xml',
+        'wizard/request_wizard_view.xml',
     ],
     "external_dependencies": {
         "python": [

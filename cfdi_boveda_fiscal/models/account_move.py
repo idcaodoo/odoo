@@ -1,6 +1,7 @@
-from odoo import models, fields
+from odoo import fields, models
+
 
 class AccountMove(models.Model):
-    _inherit = 'account.move'
+    _inherit = "account.move"
 
-    serie = fields.Char(string='Serie')
+    serie = fields.Char(string="Serie")

@@ -18,7 +18,7 @@ class CfdiDownloadData(models.Model):
     rs_emisor = fields.Char(string="Razón social emisor", required=True)
     fecha = fields.Char(string="Fecha", required=True)
     tipo = fields.Char(string="Tipo", required=True)
-    serie = fields.Char(string="Serie")
+    serie = fields.Char(string="Serie", required=False)
     folio = fields.Char(string="Folio", required=True)
     total = fields.Char(string="Total", required=True)
     conceptos = fields.Text(string="Conceptos")
@@ -66,8 +66,10 @@ class CfdiDownloadData(models.Model):
                         ('amount', '=', 100 * float(traslado.get('TasaOCuota')))
                     ])
                     if not tax_id:
-                        raise UserError("No se ha configurado el impuesto tipo {} con tasa {}".format(
-                            traslado.get('Impuesto'), traslado('TasaOCuota')))
+                        raise UserError(
+                            "No se ha configurado el impuesto tipo {} con tasa {}".format(
+                                traslado.get('Impuesto'),
+                                traslado('TasaOCuota')))
                     tax_ids.append((4, tax_id.id, 0))
                     tax_repartition_line_id = self.env['account.tax.repartition.line'].search([
                         ('tax_id', '=', tax_id.id),
@@ -86,16 +88,19 @@ class CfdiDownloadData(models.Model):
                         'tax_group_id': tax_id.tax_group_id.id,
                         'tax_base_amount': float(traslado.get('Base')),
                         'tax_repartition_line_id': tax_repartition_line_id.id if tax_repartition_line_id else False,
-                        #'exclude_from_invoice_tab': True,
+                        # 'exclude_from_invoice_tab': True,
                     }
                     self.env['account.move.line'].with_context(check_move_validity=False).create(tax_line)
                 # Linea de débito
+                valor_unitario = float(c.get('ValorUnitario'))
+                if c.get('Descuento') != 'None':
+                    valor_unitario -= float(c.get('Descuento'))
                 debit_line = {
                     'move_id': invoice_id.id,
                     'account_id': invoice_id.journal_id.default_account_id.id,
                     'quantity': float(c.get('Cantidad')),
-                    'price_unit': float(c.get('ValorUnitario')) - float(c.get('Descuento')) if c.get('Descuento') != 'None' else 0,
-                    'debit': (float(c.get('ValorUnitario')) - float(c.get('Descuento')) if c.get('Descuento') != 'None' else 0) * float(c.get('Cantidad')),
+                    'price_unit': valor_unitario,
+                    'debit': valor_unitario * float(c.get('Cantidad')),
                     'product_id': False,
                     'name': c.get('Descripcion'),
                     'tax_ids': tax_ids if tax_ids else False
@@ -108,7 +113,7 @@ class CfdiDownloadData(models.Model):
                     'account_id': invoice_id.partner_id.property_account_payable_id.id,
                     'quantity': float(c.get('Cantidad')),
                     'credit': total_concepto,
-                    #'exclude_from_invoice_tab': True,
+                    # 'exclude_from_invoice_tab': True,
                     'tax_ids': tax_ids if tax_ids else False
                     }
                 self.env['account.move.line'].with_context(check_move_validity=False).create(credit_line)
