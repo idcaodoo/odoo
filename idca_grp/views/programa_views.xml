@@ -1,0 +1,33 @@
+<odoo>
+    <record id="action_programa" model="ir.actions.act_window">
+        <field name="name">Programa</field>
+        <field name="res_model">idca.programa</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_programa_form" model="ir.ui.view">
+        <field name="name">programa.form</field>
+        <field name="model">idca.programa</field>
+        <field name="arch" type="xml">
+            <form string="Programa">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_programa_tree" model="ir.ui.view">
+        <field name="name">programa.tree</field>
+        <field name="model">idca.programa</field>
+        <field name="arch" type="xml">
+            <tree string="Programa">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,33 @@
+<odoo>
+    <record id="action_partida_presupuestaria" model="ir.actions.act_window">
+        <field name="name">Partida Presupuestaria</field>
+        <field name="res_model">idca.partida.presupuestaria</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_partida_presupuestaria_form" model="ir.ui.view">
+        <field name="name">partida.presupuestaria.form</field>
+        <field name="model">idca.partida.presupuestaria</field>
+        <field name="arch" type="xml">
+            <form string="Partida Presupuestaria">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_partida_presupuestaria_tree" model="ir.ui.view">
+        <field name="name">partida.presupuestaria.tree</field>
+        <field name="model">idca.partida.presupuestaria</field>
+        <field name="arch" type="xml">
+            <tree string="Partida Presupuestaria">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,11 @@
+<odoo>
+    <!-- Integrar al menú existente de Contabilidad -->
+    <menuitem id="menu_idca_grp_root" name="IDCA GRP" parent="account.menu_finance_entries" sequence="10"/>
+
+    <menuitem id="menu_partida_presupuestaria" name="Partida Presupuestaria" parent="menu_idca_grp_root" action="idca_grp.action_partida_presupuestaria" sequence="10"/>
+    <menuitem id="menu_fondo" name="Fondo" parent="menu_idca_grp_root" action="idca_grp.action_fondo" sequence="20"/>
+    <menuitem id="menu_programa" name="Programa" parent="menu_idca_grp_root" action="idca_grp.action_programa" sequence="30"/>
+    <menuitem id="menu_finalidad" name="Finalidad" parent="menu_idca_grp_root" action="idca_grp.action_finalidad" sequence="40"/>
+    <menuitem id="menu_funcion" name="Función" parent="menu_idca_grp_root" action="idca_grp.action_funcion" sequence="50"/>
+    <menuitem id="menu_subfuncion" name="Subfunción" parent="menu_idca_grp_root" action="idca_grp.action_subfuncion" sequence="60"/>
+</odoo>

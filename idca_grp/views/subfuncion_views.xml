@@ -1,0 +1,33 @@
+<odoo>
+    <record id="action_subfuncion" model="ir.actions.act_window">
+        <field name="name">Subfunción</field>
+        <field name="res_model">idca.subfuncion</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_subfuncion_form" model="ir.ui.view">
+        <field name="name">subfuncion.form</field>
+        <field name="model">idca.subfuncion</field>
+        <field name="arch" type="xml">
+            <form string="Subfunción">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_subfuncion_tree" model="ir.ui.view">
+        <field name="name">subfuncion.tree</field>
+        <field name="model">idca.subfuncion</field>
+        <field name="arch" type="xml">
+            <tree string="Subfunción">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

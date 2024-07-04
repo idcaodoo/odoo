@@ -1,0 +1,33 @@
+<odoo>
+    <record id="action_funcion" model="ir.actions.act_window">
+        <field name="name">Función</field>
+        <field name="res_model">idca.funcion</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_funcion_form" model="ir.ui.view">
+        <field name="name">funcion.form</field>
+        <field name="model">idca.funcion</field>
+        <field name="arch" type="xml">
+            <form string="Función">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_funcion_tree" model="ir.ui.view">
+        <field name="name">funcion.tree</field>
+        <field name="model">idca.funcion</field>
+        <field name="arch" type="xml">
+            <tree string="Función">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,18 @@
+<odoo>
+    <record id="view_crossovered_budget_lines_form_inherit" model="ir.ui.view">
+        <field name="name">crossovered.budget.form.inherit</field>
+        <field name="model">crossovered.budget</field>
+        <field name="inherit_id" ref="account_budget.crossovered_budget_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Agregar campos Many2one en la vista de árbol después de 'general_budget_id' -->
+            <xpath expr="//form/sheet/notebook/page[1]/field[@name='crossovered_budget_line']/tree/field[@name='general_budget_id']" position="after">
+                <field name="partida_presupuestaria_id"/>
+                <field name="fondo_id"/>
+                <field name="programa_id"/>
+                <field name="finalidad_id"/>
+                <field name="funcion_id"/>
+                <field name="subfuncion_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
