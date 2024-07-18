@@ -1,0 +1,46 @@
+<odoo>
+    <!-- Acción para Budget Details -->
+    <record id="action_budget_details" model="ir.actions.act_window">
+        <field name="name">Budget Details</field>
+        <field name="res_model">budget.details</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- Vista de Formulario para Budget Details -->
+    <record id="view_budget_details_form" model="ir.ui.view">
+        <field name="name">budget.details.form</field>
+        <field name="model">budget.details</field>
+        <field name="arch" type="xml">
+            <form string="Budget Details">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="partida_presupuestaria_id"/>
+                        <field name="fondo_id"/>
+                        <field name="programa_id"/>
+                        <field name="finalidad_id"/>
+                        <field name="funcion_id"/>
+                        <field name="subfuncion_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista de Árbol para Budget Details -->
+    <record id="view_budget_details_tree" model="ir.ui.view">
+        <field name="name">budget.details.tree</field>
+        <field name="model">budget.details</field>
+        <field name="arch" type="xml">
+            <tree string="Budget Details">
+                <field name="name"/>
+                <field name="partida_presupuestaria_id"/>
+                <field name="fondo_id"/>
+                <field name="programa_id"/>
+                <field name="finalidad_id"/>
+                <field name="funcion_id"/>
+                <field name="subfuncion_id"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

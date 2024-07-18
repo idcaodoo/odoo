@@ -8,6 +8,7 @@
     'depends': ['account_accountant','account_budget','purchase'],
     'data': [
         'security/ir.model.access.csv',
+        'views/budget_details_views.xml',
         'views/partida_presupuestaria_views.xml',
         'views/fondo_views.xml',
         'views/programa_views.xml',
@@ -17,7 +18,6 @@
         'views/menu_views.xml',
         'views/crossovered_budget_lines_views.xml',
         'views/purchase_order_views.xml',
-
     ],
     'installable': True,
     'application': False,

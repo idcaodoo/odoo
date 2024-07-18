@@ -8,4 +8,5 @@
     <menuitem id="menu_finalidad" name="Finalidad" parent="menu_idca_grp_root" action="idca_grp.action_finalidad" sequence="40"/>
     <menuitem id="menu_funcion" name="Función" parent="menu_idca_grp_root" action="idca_grp.action_funcion" sequence="50"/>
     <menuitem id="menu_subfuncion" name="Subfunción" parent="menu_idca_grp_root" action="idca_grp.action_subfuncion" sequence="60"/>
+    <menuitem id="menu_budget_details" name="Budget Details" parent="menu_idca_grp_root" action="action_budget_details" sequence="70"/>
 </odoo>

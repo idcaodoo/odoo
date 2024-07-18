@@ -5,3 +5,4 @@ access_idca_programa,idca.programa,model_idca_programa,,1,1,1,1
 access_idca_finalidad,idca.finalidad,model_idca_finalidad,,1,1,1,1
 access_idca_funcion,idca.funcion,model_idca_funcion,,1,1,1,1
 access_idca_subfuncion,idca.subfuncion,model_idca_subfuncion,,1,1,1,1
+access_idca_budget_details,budget.details,model_budget_details,,1,1,1,1
