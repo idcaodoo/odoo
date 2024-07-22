@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="analytic_distribution_act_window" model="ir.actions.act_window">
+        <field name="name">Analytic Distribution</field>
+        <field name="res_model">analytic.distributor</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="analytic_distribution_form_view" model="ir.ui.view">
+        <field name="name">analytic_distribution_form_view</field>
+        <field name="model">analytic.distributor</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="percentage"/>
+                        <field name="budget"/>
+                        <field name="purchase_order_line_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="analytic_distribution_tree_view" model="ir.ui.view">
+        <field name="name">analytic_distribution_tree_view</field>
+        <field name="model">analytic.distributor</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+                <field name="percentage"/>
+                <field name="budget"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

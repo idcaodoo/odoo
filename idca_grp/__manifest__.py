@@ -5,9 +5,10 @@
     'summary': 'GRP',
     'description': 'Módulo para la gestión GRP.',
     'author': 'IDCA',
-    'depends': ['account_accountant','account_budget','purchase'],
+    'depends': ['account_accountant', 'account_budget', 'purchase'],
     'data': [
         'security/ir.model.access.csv',
+        'data/analytic_distribution_plan_data.xml',
         'views/budget_details_views.xml',
         'views/partida_presupuestaria_views.xml',
         'views/fondo_views.xml',
@@ -18,6 +19,8 @@
         'views/menu_views.xml',
         'views/crossovered_budget_lines_views.xml',
         'views/purchase_order_views.xml',
+        'views/analytic_distribution_views.xml',
+        'wizard/analytic_distribution_wizard_views.xml'
     ],
     'installable': True,
     'application': False,

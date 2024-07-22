@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
             <!-- Agregar el campo analytic_distribution después del campo name en las líneas de orden de compra -->
             <xpath expr="//form/sheet/notebook/page[@name='products']/field[@name='order_line']/tree/field[@name='name']" position="after">
-                <field name="analytic_distribution" widget="analytic_distribution"/>
+                <field name="analytic_distribution" widget="analytic_distribution" />
             </xpath>
         </field>
     </record>

@@ -6,4 +6,5 @@ from . import programa
 from . import finalidad
 from . import funcion
 from . import subfuncion
+from . import analytic_distribution
 from . import purchase_order

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="account_analytic_plan_budget_data" model="account.analytic.plan">
+            <field name="name">Budget</field>
+            <field name="default_applicability">optional</field>
+            <field name="color">6</field>
+        </record>
+    </data>
+</odoo>
