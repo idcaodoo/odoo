@@ -1,38 +1,40 @@
 <odoo>
-    <!-- Acción para Budget Details -->
+    <!-- Acción para Detalles del Presupuesto -->
     <record id="action_budget_details" model="ir.actions.act_window">
-        <field name="name">Budget Details</field>
+        <field name="name">Detalles del Presupuesto</field>
         <field name="res_model">budget.details</field>
         <field name="view_mode">tree,form</field>
     </record>
     
-    <!-- Vista de Formulario para Budget Details -->
+    <!-- Vista de Formulario para Detalles del Presupuesto -->
     <record id="view_budget_details_form" model="ir.ui.view">
         <field name="name">budget.details.form</field>
         <field name="model">budget.details</field>
         <field name="arch" type="xml">
-            <form string="Budget Details">
+            <form string="Detalles del Presupuesto">
                 <sheet>
-                    <group>
-                        <field name="name"/>
-                        <field name="partida_presupuestaria_id"/>
-                        <field name="fondo_id"/>
-                        <field name="programa_id"/>
-                        <field name="finalidad_id"/>
-                        <field name="funcion_id"/>
-                        <field name="subfuncion_id"/>
+                    <group string="Información General">
+                        <field name="name" placeholder="Ingrese el nombre..."/>
+                    </group>
+                    <group string="Detalles del Presupuesto">
+                        <field name="partida_presupuestaria_id" placeholder="Seleccione Partida Presupuestaria"/>
+                        <field name="fondo_id" placeholder="Seleccione Fondo"/>
+                        <field name="programa_id" placeholder="Seleccione Programa"/>
+                        <field name="finalidad_id" placeholder="Seleccione Finalidad"/>
+                        <field name="funcion_id" placeholder="Seleccione Función"/>
+                        <field name="subfuncion_id" placeholder="Seleccione Subfunción"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <!-- Vista de Árbol para Budget Details -->
+    <!-- Vista de Árbol para Detalles del Presupuesto -->
     <record id="view_budget_details_tree" model="ir.ui.view">
         <field name="name">budget.details.tree</field>
         <field name="model">budget.details</field>
         <field name="arch" type="xml">
-            <tree string="Budget Details">
+            <tree string="Detalles del Presupuesto">
                 <field name="name"/>
                 <field name="partida_presupuestaria_id"/>
                 <field name="fondo_id"/>
