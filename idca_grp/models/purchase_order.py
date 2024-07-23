@@ -39,34 +39,34 @@ class PurchaseOrderLine(models.Model):
 
             for line in exp.crossovered_budget_line:
                 if not line.date_from and not line.date_to:
-                    total_plan_amount += line.planned_amount * plan_dict[exp.id] / 100
+                    total_plan_amount += line.available_budget * plan_dict[exp.id] / 100
                     total_practical_amount += line.practical_amount
                     analytic_distribution_ls.append(exp.name)
                     is_flag = True
 
-                    if line.practical_amount > line.planned_amount:
+                    if line.practical_amount > line.available_budget:
                         analytic_distribution_less_ls.append(exp)
                         is_less = True
 
                 if line.date_from and not line.date_to:
                     if fields.Date.from_string(line.date_from) >= date_order:
-                        total_plan_amount += line.planned_amount * plan_dict[exp.id] / 100
+                        total_plan_amount += line.available_budget * plan_dict[exp.id] / 100
                         total_practical_amount += line.practical_amount
                         analytic_distribution_ls.append(exp.name)
                         is_flag = True
 
-                        if line.practical_amount > line.planned_amount:
+                        if line.practical_amount > line.available_budget:
                             analytic_distribution_less_ls.append(exp)
                             is_less = True
 
                 if line.date_from and line.date_to:
                     if fields.Date.from_string(line.date_from) <= date_order <= fields.Date.from_string(line.date_to):
-                        total_plan_amount += line.planned_amount * plan_dict[exp.id] / 100
+                        total_plan_amount += line.available_budget * plan_dict[exp.id] / 100
                         total_practical_amount += line.practical_amount
                         analytic_distribution_ls.append(exp.name)
                         is_flag = True
 
-                        if line.practical_amount > line.planned_amount:
+                        if line.practical_amount > line.available_budget:
                             analytic_distribution_less_ls.append(exp)
                             is_less = True
 

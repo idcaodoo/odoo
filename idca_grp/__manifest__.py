@@ -20,6 +20,7 @@
         'views/crossovered_budget_lines_views.xml',
         'views/purchase_order_views.xml',
         'views/analytic_distribution_views.xml',
+        'views/account_analytic_account_views.xml',
         'wizard/analytic_distribution_wizard_views.xml'
     ],
     'installable': True,
