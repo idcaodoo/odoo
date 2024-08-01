@@ -1,0 +1,14 @@
+/*@media print {
+    .render-container .pos-receipt {
+        width: 302px !important;
+    }
+}*/
+.render-container .pos-receipt {
+    width: 302px !important;
+    font-size: 14px !important;
+}
+
+.pos-receipt-print {
+    width: 302px !important;
+    font-size: 14px !important;
+}
