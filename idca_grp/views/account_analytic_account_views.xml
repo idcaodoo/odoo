@@ -5,7 +5,12 @@
         <field name="inherit_id" ref="account_budget.view_account_analytic_account_form_inherit_budget"/>
         <field name="arch" type="xml">
             <xpath expr="///notebook/page[1]/field[@name='crossovered_budget_line']/tree/field[@name='practical_amount']" position="after">
+                <field name="importe_comprometido" sum="Importe comprometido"/>
+                <field name="importe_devengado" sum="Importe devengado"/>
                 <field name="available_budget" sum="Presupuesto disponible"/>
+            </xpath>
+            <xpath expr="//field[@name='practical_amount']" position="attributes">
+                <attribute name="string">Importe ejercido</attribute>
             </xpath>
         </field>
     </record>
